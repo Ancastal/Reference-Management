@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+Filtered Entries
+{% endblock %}
+
+{% block content %}
+<h2 class="card-title">Filtered Entries</h2>
+{% if entries %}
+    <ul>
+    {% for entry in entries %}
+        <li>{{ entry.generate_citation() }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No entries found.</p>
+{% endif %}
+{% endblock %}

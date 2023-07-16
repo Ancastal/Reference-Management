@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+List References
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="my-4">List References</h2>
+  <div class="row">
+    <div class="col">
+      {% if citations %}
+        <div class="list-group">
+          {% for citation in citations %}
+            <a href="#" class="list-group-item list-group-item-action">{{ citation }}</a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-muted">No citations found.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

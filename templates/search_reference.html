@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Search Reference
+{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    Search references
+  </div>
+  <div class="card-body">
+    <form method="POST">
+      <div class="form-group">
+        <label for="query">Search Query</label>
+        <input type="text" class="form-control" id="query" name="query" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  </div>
+</div>
+
+{% if results %}
+<div class="card">
+  <div class="card-header">
+    Search Results
+  </div>
+  <div class="card-body">
+    <ul class="list-group">
+      {% for result in results %}
+      <li class="list-group-item">
+        <a href="{{ url_for('view_reference', key=result.key) }}">{{ result.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
