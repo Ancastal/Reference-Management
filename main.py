@@ -3,7 +3,7 @@ import colorama
 import pyfiglet
 from colorama import Fore, Style
 from pybibtex import BibTeXFile, BibTeXEntry
-
+from api import search_title, search_author, search_abstract, search_category, search_keyword
 colorama.init()
 
 DATABASE_FILE = 'references.bib'
@@ -222,13 +222,22 @@ def print_arxiv():
     print(Fore.GREEN + "====================== ARXIV ======================")
     print(Fore.CYAN + "1. Search by Title")
     print("2. Search by Author")
-    print(Fore.YELLOW + "3. Search by Year")
-    print(Fore.MAGENTA + "4. Search by Journal")
-    print(Fore.GREEN + "5. Search by Abstract")
+    print(Fore.GREEN + "3. Search by Abstract")
     choice = input("Enter your choice (1-5): ")
-    if choice == 1:
-        search_title()
+    if str(1) in choice:
+        title = input("Enter the title: ")
+        search_title("\n" + title)
 
+    elif str(2) in choice:
+        author = input("Enter the author: ")
+        print()
+        search_author("\n" + author)
+    elif str(3) in choice:
+        abstract = input("Enter part of the abstract: ")
+        print()
+        search_abstract("\n" + abstract)
+    input("\nPress Enter to continue...")
+    
 def main():
     show_onboarding()
     clear_screen()
