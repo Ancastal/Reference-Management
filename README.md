@@ -2,7 +2,7 @@
 
 ## Description
 
-The Reference Management System (RMS) is a Python-based tool designed to organize and manage bibliographic references. It is tailored for researchers, students, and academics who need to handle a large number of references efficiently. The system supports operations like adding, editing, deleting, and searching references within a local database. Moreover, it integrates with arXiv, allowing users to search for scholarly articles by title, author, or abstract.
+The Reference Management System (RMS) is a Python-based tool designed to organize and manage bibliographic references. The system supports operations like adding, editing, deleting, and searching references within a local database. Moreover, it integrates with arXiv API, allowing users to search for scholarly articles by title, author, or abstract.
 
 ## Features
 
