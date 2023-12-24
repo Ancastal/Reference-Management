@@ -12,6 +12,8 @@ def search_title(title):
     author_query = arxiv.Search(query=f"ti:\"{title}\"", max_results=1)
 
     for result in author_query.results():
+        print(result.title)
+        print()
         print(result.summary)
 
 
